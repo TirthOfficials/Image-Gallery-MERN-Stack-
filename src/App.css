@@ -1,38 +1,114 @@
-.App {
+/* App.css */
+.app-container {
   text-align: center;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  padding: 20px;
+  color: #000000;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-title {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.upload-container {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.upload-file-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px dashed #3182ce;
+  border-radius: 4px;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-label {
+  color: #3182ce;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upload-file-input {
+  display: none;
+}
+
+.upload-button {
+  padding: 8px 16px;
+  background-color: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.image-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.thumbnail-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.image-name {
+  margin-top: 10px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.open-button,
+.delete-button {
+  padding: 8px 16px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.open-button {
+  background-color: #48bb78;
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #e53e3e;
+}
+
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px dashed #3182ce;
+  border-radius: 4px;
+  pointer-events: none;
 }
