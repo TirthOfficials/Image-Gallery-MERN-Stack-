@@ -67,7 +67,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1 className="app-title">Image Gallery!</h1>
+      <h1 className="app-title">Image Gallery</h1>
       <div className="upload-container">
         <input type="file" onChange={handleFileChange} />
         <button className="upload-button" onClick={handleUpload}>
