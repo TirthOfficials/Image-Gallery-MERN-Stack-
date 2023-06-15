@@ -25,7 +25,7 @@ const App = () => {
     formData.append('image', selectedImage);
 
     try {
-      await axios.post('http://localhost:3001/upload', formData, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -40,7 +40,7 @@ const App = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/images');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/images`);
       setImages(response.data);
     } catch (error) {
       console.error(error);
@@ -49,7 +49,7 @@ const App = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/images/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/images/${id}`);
       fetchImages();
       console.log('Image deleted successfully');
     } catch (error) {
@@ -58,7 +58,7 @@ const App = () => {
   };
 
   const handleOpen = (image) => {
-    window.open(`http://localhost:3001/uploads/${image.filename}`, '_blank');
+    window.open(`${process.env.REACT_APP_API_URL}/uploads/${image.filename}`, '_blank');
   };
 
   const handleClose = () => {
@@ -79,7 +79,7 @@ const App = () => {
           <div key={image._id} className="image-container">
             <div className="image-wrapper">
               <img
-                src={`http://localhost:3001/uploads/${image.filename}`}
+                src={`${process.env.REACT_APP_API_URL}/uploads/${image.filename}`}
                 alt={image.filename}
                 className="thumbnail-image"
               />
@@ -99,4 +99,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
